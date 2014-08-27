@@ -12,6 +12,8 @@
 
 -(NSMutableArray *)parseSuccessfulRepoResponse:(NSData *)responseData;
 
+-(void)handleCallBackURL:(NSURL *)url;
+
 @property NSString *apiDomain;
 @property NSMutableArray *repos;
 

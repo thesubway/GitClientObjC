@@ -454,6 +454,7 @@
 				6D5B021B19ABD5F300083D5F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6D5B021C19ABD5F300083D5F /* Build configuration list for PBXNativeTarget "GitClientObjCTests" */ = {
 			isa = XCConfigurationList;
@@ -462,6 +463,7 @@
 				6D5B021E19ABD5F300083D5F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

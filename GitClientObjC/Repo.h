@@ -16,6 +16,6 @@
 @property int ID;
 @property User *owner;
 
--(Repo *)initWithTitle:(NSDictionary *)json;
+-(instancetype)initWithTitle:(NSDictionary *)json;
 
 @end

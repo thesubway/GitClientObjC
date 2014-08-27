@@ -10,7 +10,7 @@
 
 @implementation Repo
 
--(Repo *)initWithTitle:(NSDictionary *)json {
+-(instancetype)initWithTitle:(NSDictionary *)json {
     self = [super init];
     //to ensure it's a full object:
     if (self) {
