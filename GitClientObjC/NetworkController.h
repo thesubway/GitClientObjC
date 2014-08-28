@@ -11,10 +11,13 @@
 @interface NetworkController : NSObject
 
 -(NSMutableArray *)parseSuccessfulRepoResponse:(NSData *)responseData;
+-(NSMutableArray *)parseSuccessfulUserResponse:(NSData *)responseData;
 
 -(void)handleCallBackURL:(NSURL *)url;
 
 @property NSString *apiDomain;
 @property NSMutableArray *repos;
+@property NSMutableArray *users;
+-(void) fetchUsersForSearchTerm:(NSString*)userString completionHandler: (void (^)(NSMutableArray*, NSString*))completionHandler;
 
 @end

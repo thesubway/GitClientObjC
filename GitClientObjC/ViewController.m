@@ -28,7 +28,6 @@
 -(ViewController *)init {
     self = [super init];
     if (self) {
-        
     }
     return self;
 }
@@ -85,6 +84,10 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    Repo *curRepo = [self.appDelegate.userRepos objectAtIndex:indexPath.row];
+    NSLog(@"%@",curRepo.title);
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

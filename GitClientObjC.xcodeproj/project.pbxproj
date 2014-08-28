@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D4FDE0C19AE7340000102C7 /* RtTblViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D4FDE0B19AE7340000102C7 /* RtTblViewController.m */; };
+		6D4FDE0F19AE7564000102C7 /* UserSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D4FDE0E19AE7564000102C7 /* UserSearchViewController.m */; };
+		6D4FDE1219AE9652000102C7 /* UserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D4FDE1119AE9652000102C7 /* UserCell.m */; };
 		6D5B01FC19ABD5F300083D5F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D5B01FB19ABD5F300083D5F /* main.m */; };
 		6D5B01FF19ABD5F300083D5F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D5B01FE19ABD5F300083D5F /* AppDelegate.m */; };
 		6D5B020219ABD5F300083D5F /* GitClientObjC.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6D5B020019ABD5F300083D5F /* GitClientObjC.xcdatamodeld */; };
@@ -34,6 +37,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6D4FDE0A19AE7340000102C7 /* RtTblViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RtTblViewController.h; sourceTree = "<group>"; };
+		6D4FDE0B19AE7340000102C7 /* RtTblViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RtTblViewController.m; sourceTree = "<group>"; };
+		6D4FDE0D19AE7564000102C7 /* UserSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserSearchViewController.h; sourceTree = "<group>"; };
+		6D4FDE0E19AE7564000102C7 /* UserSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserSearchViewController.m; sourceTree = "<group>"; };
+		6D4FDE1019AE9652000102C7 /* UserCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCell.h; sourceTree = "<group>"; };
+		6D4FDE1119AE9652000102C7 /* UserCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCell.m; sourceTree = "<group>"; };
 		6D5B01F619ABD5F300083D5F /* GitClientObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitClientObjC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D5B01FA19ABD5F300083D5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D5B01FB19ABD5F300083D5F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -102,6 +111,8 @@
 				6D5B022519ABE03300083D5F /* json files */,
 				6D5B021F19ABD60A00083D5F /* NetworkController.h */,
 				6D5B022019ABD60A00083D5F /* NetworkController.m */,
+				6D4FDE1019AE9652000102C7 /* UserCell.h */,
+				6D4FDE1119AE9652000102C7 /* UserCell.m */,
 				6D5B022219ABD6FD00083D5F /* Repo.h */,
 				6D5B022319ABD6FD00083D5F /* Repo.m */,
 				6D5B022919ABE89D00083D5F /* User.h */,
@@ -154,6 +165,10 @@
 			children = (
 				6D5B020319ABD5F300083D5F /* ViewController.h */,
 				6D5B020419ABD5F300083D5F /* ViewController.m */,
+				6D4FDE0A19AE7340000102C7 /* RtTblViewController.h */,
+				6D4FDE0B19AE7340000102C7 /* RtTblViewController.m */,
+				6D4FDE0D19AE7564000102C7 /* UserSearchViewController.h */,
+				6D4FDE0E19AE7564000102C7 /* UserSearchViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -261,11 +276,14 @@
 			files = (
 				6D5B020219ABD5F300083D5F /* GitClientObjC.xcdatamodeld in Sources */,
 				6D5B022B19ABE89D00083D5F /* User.m in Sources */,
+				6D4FDE0F19AE7564000102C7 /* UserSearchViewController.m in Sources */,
 				6D5B01FF19ABD5F300083D5F /* AppDelegate.m in Sources */,
 				6D5B020519ABD5F300083D5F /* ViewController.m in Sources */,
 				6D5B022419ABD6FD00083D5F /* Repo.m in Sources */,
 				6D5B01FC19ABD5F300083D5F /* main.m in Sources */,
 				6D5B022119ABD60A00083D5F /* NetworkController.m in Sources */,
+				6D4FDE1219AE9652000102C7 /* UserCell.m in Sources */,
+				6D4FDE0C19AE7340000102C7 /* RtTblViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

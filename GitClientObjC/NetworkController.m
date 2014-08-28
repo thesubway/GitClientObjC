@@ -14,6 +14,8 @@
 @interface NetworkController ()
 
 @property (strong,nonatomic) NSURLSession *session;
+@property NSURLSessionConfiguration *configuration;
+
 @property (strong,nonatomic) NSString *token;
 @property (strong,nonatomic) AppDelegate *appDelegate;
 
@@ -28,6 +30,8 @@
         //
         self.session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
         self.appDelegate = [[UIApplication sharedApplication] delegate];
+        self.configuration = [NSURLSessionConfiguration ephemeralSessionConfiguration];
+        self.users = [[NSMutableArray alloc] init];
     }
     
     return self;
@@ -46,6 +50,20 @@
     }
     //return NSMutableArray of repo's.
     return self.repos;
+}
+
+-(NSMutableArray *)parseSuccessfulUserResponse:(NSData *)responseData {
+    NSDictionary *responseDict = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:nil];
+    NSMutableArray *items = responseDict[@"items"];
+    NSLog(@"%lu", (unsigned long)items.count);
+    
+    for (id eachItem in items) {
+        NSDictionary *itemDict = eachItem;
+        User *user = [[User alloc] initWithDict:itemDict];
+        [self.users addObject:user];
+    }
+    NSLog(@"%lu",(unsigned long)self.users.count);
+    return self.users;
 }
 
 -(void)handleCallBackURL:(NSURL *)url {
@@ -108,6 +126,40 @@
     NSArray *tokenArray = [tokenWithCode componentsSeparatedByString:@"="];
     return tokenArray.lastObject;
     
+}
+//(returnType (^)(parameterTypes))blockName
+-(void) fetchUsersForSearchTerm:(NSString*)userString completionHandler: (void (^)(NSMutableArray* users, NSString* errorDescription))completionHandler {
+    NSURL *url = [[NSURL alloc] initWithString:[ NSString stringWithFormat: @"https://api.github.com/search/users?q=%@",userString]];
+    NSURLSession *urlSession = [NSURLSession sessionWithConfiguration:self.configuration];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
+    request.HTTPMethod = @"GET";
+    NSURLSessionDataTask *repoDataTask = [urlSession dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        
+        if (error != nil) {
+            NSLog(@"error");
+        }
+        else {
+            //normally this is an if-let, but oh well.
+            NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+            switch (httpResponse.statusCode) {
+                case 200: {
+                    NSLog(@"Life is great!");
+//                    NSDictionary *JSON = [NSJSONSerialization JSONObjectWithData:data options:nil error:nil];
+                    NSMutableArray *users = [self parseSuccessfulUserResponse:data];
+//                    NSLog(@"%@",data);
+                    completionHandler(users,nil);
+                    break;
+                }
+                case 404:
+                    NSLog(@"error 404: not found");
+                    break;
+                default:
+                    NSLog(@"error %ld",(long)httpResponse.statusCode);
+                    break;
+            }
+        }
+    }];
+    [repoDataTask resume];
 }
 
 -(void)fetchUsersRepos {

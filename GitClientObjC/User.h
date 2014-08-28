@@ -12,7 +12,9 @@
 
 -(User *)initWithDict:(NSDictionary *)json;
 @property NSString *login;
+@property NSString *name;
 @property int ID;
 @property NSString *url;
+@property NSString *avatarURL;
 
 @end

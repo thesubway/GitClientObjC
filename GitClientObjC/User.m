@@ -15,6 +15,8 @@
         self.login = json[@"login"];
         self.ID = (int)json[@"id"];
         self.url = json[@"url"];
+        self.name = json[@"name"];
+        self.avatarURL = json[@"avatar_url"];
     }
     return self;
 }
