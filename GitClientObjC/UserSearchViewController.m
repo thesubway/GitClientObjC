@@ -63,8 +63,7 @@
 -(void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 //    NSLog(@"%ld",(long)indexPath.item);
     User *currentUser = self.users[indexPath.item];
-    NSLog(@"%@",currentUser.avatarURL);
-    NSLog(@"hi.");
+    NSLog(@"%@",currentUser.login);
 }
 -(UICollectionViewCell *) collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UserCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"searchedUserCell" forIndexPath:indexPath];

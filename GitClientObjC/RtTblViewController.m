@@ -9,6 +9,7 @@
 #import "RtTblViewController.h"
 #import "UserSearchViewController.h"
 #import "ViewController.h"
+#import "CreateRepoViewController.h"
 
 @interface RtTblViewController ()
 
@@ -21,10 +22,12 @@
     //use the ID as the string of that viewController.
     self.viewControlStrings = [[NSMutableArray alloc] init];
     self.viewControlObjects = [[NSMutableArray alloc] init];
-    ViewController *vC = [self.storyboard instantiateViewControllerWithIdentifier:@"viewController"];
     UserSearchViewController *userSearchVC = [self.storyboard instantiateViewControllerWithIdentifier:@"userSearchViewController"];
-    [self.viewControlStrings addObject:@"viewController"], [self.viewControlObjects addObject:vC];
+    ViewController *vC = [self.storyboard instantiateViewControllerWithIdentifier:@"viewController"];
+    CreateRepoViewController *createRepoVC = [self.storyboard instantiateViewControllerWithIdentifier:@"createRepoVC"];
     [self.viewControlStrings addObject:@"userSearchViewController"],[self.viewControlObjects addObject:userSearchVC];
+    [self.viewControlStrings addObject:@"createRepoVC"];[self.viewControlObjects addObject:createRepoVC];
+    [self.viewControlStrings addObject:@"viewController"], [self.viewControlObjects addObject:vC];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     NSLog(@"%lu",(unsigned long)self.viewControlStrings.count);

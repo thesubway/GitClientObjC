@@ -24,6 +24,7 @@
 		6D5B022C19ABEA5700083D5F /* Repo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D5B022319ABD6FD00083D5F /* Repo.m */; };
 		6D5B022D19ABEA5C00083D5F /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D5B022A19ABE89D00083D5F /* User.m */; };
 		6D5B023119AC123B00083D5F /* UserProps.json in Resources */ = {isa = PBXBuildFile; fileRef = 6D5B023019AC123B00083D5F /* UserProps.json */; };
+		6DA92E0719AFD054006FCBA9 /* CreateRepoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DA92E0619AFD054006FCBA9 /* CreateRepoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,8 @@
 		6D5B022919ABE89D00083D5F /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		6D5B022A19ABE89D00083D5F /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		6D5B023019AC123B00083D5F /* UserProps.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UserProps.json; sourceTree = "<group>"; };
+		6DA92E0519AFD054006FCBA9 /* CreateRepoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateRepoViewController.h; sourceTree = "<group>"; };
+		6DA92E0619AFD054006FCBA9 /* CreateRepoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateRepoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +172,8 @@
 				6D4FDE0B19AE7340000102C7 /* RtTblViewController.m */,
 				6D4FDE0D19AE7564000102C7 /* UserSearchViewController.h */,
 				6D4FDE0E19AE7564000102C7 /* UserSearchViewController.m */,
+				6DA92E0519AFD054006FCBA9 /* CreateRepoViewController.h */,
+				6DA92E0619AFD054006FCBA9 /* CreateRepoViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -283,6 +288,7 @@
 				6D5B01FC19ABD5F300083D5F /* main.m in Sources */,
 				6D5B022119ABD60A00083D5F /* NetworkController.m in Sources */,
 				6D4FDE1219AE9652000102C7 /* UserCell.m in Sources */,
+				6DA92E0719AFD054006FCBA9 /* CreateRepoViewController.m in Sources */,
 				6D4FDE0C19AE7340000102C7 /* RtTblViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

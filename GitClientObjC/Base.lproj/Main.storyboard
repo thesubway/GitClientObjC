@@ -56,7 +56,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uog-YU-jp5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="384" y="701"/>
+            <point key="canvasLocation" x="1204" y="729"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="wwu-rw-8g8">
@@ -84,6 +84,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gid-iF-Xzp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1204" y="39"/>
+        </scene>
+        <!--Create Repo View Controller-->
+        <scene sceneID="1AG-sO-ABi">
+            <objects>
+                <viewController storyboardIdentifier="createRepoVC" id="UAs-zZ-myu" customClass="CreateRepoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QVu-e9-qxt"/>
+                        <viewControllerLayoutGuide type="bottom" id="KsE-pF-oFs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OMv-BM-20x">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CXJ-fh-vgc">
+                                <rect key="frame" x="59" y="42" width="85" height="30"/>
+                                <state key="normal" title="Add Repo">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addRepoPressed:" destination="UAs-zZ-myu" eventType="touchUpInside" id="Vqt-21-VFh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="glW-cV-Bgt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="384" y="1417"/>
         </scene>
         <!--User Search View Controller-->
         <scene sceneID="YhS-ve-o4E">
@@ -174,7 +203,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DEf-V9-f36" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1204" y="701"/>
+            <point key="canvasLocation" x="384" y="729"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="j5t-vj-L3I">
@@ -198,7 +227,7 @@
                 <splitViewController id="SzH-Vl-nY0" sceneMemberID="viewController">
                     <connections>
                         <segue destination="G6h-93-ApN" kind="relationship" relationship="masterViewController" id="6BG-k5-nQD"/>
-                        <segue destination="e2f-qh-593" kind="relationship" relationship="detailViewController" id="15b-UX-VhO"/>
+                        <segue destination="voZ-Hq-pwg" kind="relationship" relationship="detailViewController" id="CDR-Oq-ytP"/>
                     </connections>
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qsw-2n-Vel" userLabel="First Responder" sceneMemberID="firstResponder"/>

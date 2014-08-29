@@ -8,6 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol NetworkControllerDelegate <NSObject>
+
+//- (void) didAuthenticate;
+- (void) didCreateRepo: (NSDictionary *) JSONDict;
+
+@end
+
 @interface NetworkController : NSObject
 
 -(NSMutableArray *)parseSuccessfulRepoResponse:(NSData *)responseData;
@@ -18,6 +25,9 @@
 @property NSString *apiDomain;
 @property NSMutableArray *repos;
 @property NSMutableArray *users;
+//for the delegate:
+@property (unsafe_unretained) id <NetworkControllerDelegate> delegate;
 -(void) fetchUsersForSearchTerm:(NSString*)userString completionHandler: (void (^)(NSMutableArray*, NSString*))completionHandler;
+-(void) postReposFor:(NSString*)userString;
 
 @end

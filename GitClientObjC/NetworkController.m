@@ -10,6 +10,7 @@
 #import "Repo.h"
 #import "ViewController.h"
 #import "AppDelegate.h"
+#import "CreateRepoViewController.h"
 
 @interface NetworkController ()
 
@@ -126,6 +127,28 @@
     NSArray *tokenArray = [tokenWithCode componentsSeparatedByString:@"="];
     return tokenArray.lastObject;
     
+}
+//for creating repo.
+-(void) postReposFor:(NSString*)userString {
+    NSDictionary * post = @{@"name":userString};
+    //NSLog(@"%@",post);
+    NSData * JSONData = [NSJSONSerialization dataWithJSONObject:post options:kNilOptions error:nil];
+    NSString * postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[JSONData length]];
+    NSMutableURLRequest * request = [[NSMutableURLRequest alloc] init];
+    
+    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@user/repos",@"https://api.github.com/"]]];
+    [request setHTTPMethod:@"POST"];
+    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+    [request setValue:[NSString stringWithFormat:@"token %@",self.token] forHTTPHeaderField:@"Authorization"];
+    [request setValue:@"text/plain" forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPBody:JSONData];
+    
+    NSURLResponse * response;
+    NSError * error;
+    NSData * responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    NSLog(@"error: %@",error);
+    
+    [self.delegate didCreateRepo:[NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:nil]];
 }
 //(returnType (^)(parameterTypes))blockName
 -(void) fetchUsersForSearchTerm:(NSString*)userString completionHandler: (void (^)(NSMutableArray* users, NSString* errorDescription))completionHandler {
